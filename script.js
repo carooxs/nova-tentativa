@@ -6,7 +6,7 @@ const privateKey = 'fc91a0fa4d2913922c6287c86fd2709e50c28fcc',
 const getConnection = () => {
       const ts = Date.now(),
             hash = md5(ts + privateKey + publicKey),
-            URL = `http://gateway.marvel.com/v1/public/characters?ts=1563409047722&apikey=db880f293c41738b88c14a0924fcdbcb&hash=549e68d2cdcd811a7c734fb88b6f1168`;
+            URL = `https://gateway.marvel.com/v1/public/characters?ts=1563409047722&apikey=db880f293c41738b88c14a0924fcdbcb&hash=549e68d2cdcd811a7c734fb88b6f1168`;
 
               fetch(URL)
              .then(response => response.json())
@@ -35,7 +35,7 @@ const searchHero = name => {
     const ts = Date.now(),
     hash = md5(ts + privateKey + publicKey),
     hero = encodeURIComponent (name),
-    URL = `http://gateway.marvel.com/v1/public/characters?name=${hero}&ts=1563409047722&apikey=db880f293c41738b88c14a0924fcdbcb&hash=549e68d2cdcd811a7c734fb88b6f1168`;
+    URL = `https://gateway.marvel.com/v1/public/characters?name=${hero}&ts=1563409047722&apikey=db880f293c41738b88c14a0924fcdbcb&hash=549e68d2cdcd811a7c734fb88b6f1168`;
 
     fetch(URL)
     .then(response => response.json())
